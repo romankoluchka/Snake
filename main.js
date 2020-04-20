@@ -18,7 +18,6 @@ const config = {
 	cellSize: 15,
 };
 
-let gameStatus = 'new'; //'new', 'play', 'stopped'
 let score = 0;
 let speed = 1;
 let record = localStorage.getItem('SnakeRecord') || 0;
@@ -232,7 +231,8 @@ function ifCollision() {
 function saveRecord() {
 	if (score > record) {
 		localStorage.setItem('SnakeRecord', score);
-		recordEl.innerHTML = score;
+		record = score;
+		recordEl.textContent = score;
 	}
 };
 
