@@ -1,0 +1,195 @@
+html {
+	font-family: Roboto;
+	height: 100%;
+ /* colors */
+	--blue: #084056;
+	--green: #188367;
+	--grass: #9ea66d;
+	--orange: #ff914d;
+	--red: #f53005;
+}
+body {
+	height: 100%;
+	color: var(--blue);
+	background: #ddd;
+}
+.wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+header {
+	width: 100%;
+	background: #fff;
+}
+h1 {
+	text-align: center;
+	padding: 20px;
+	font-size: 200%;
+	font-weight: bold;
+}
+main {
+	display: flex;
+	flex: 2;
+}
+section, aside {
+	min-height: 100px;
+}
+section {
+	flex: 2;
+	background: var(--blue);
+	padding: 20px;
+}
+aside {
+	flex: 1;
+	background: var(--grass);
+	padding: 20px;
+}
+aside button {
+	font-family: Roboto;
+	border-radius: 4px;
+	border: 0;
+	padding: 0 15px;
+	display: inline-block;
+	margin: 0 20px 20px 0;
+	background: var(--blue);
+	font-size: 100%;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s ease-in-out;
+	height: 40px;
+	line-height: 40px;
+	outline: none;
+}
+aside button.pause, aside button.play {
+	background: var(--blue);
+}
+aside button.new {
+	background: var(--red);
+}
+aside button.pause, aside button.new {
+	display: none;
+}
+aside button:hover {
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+aside button:active {
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+}
+.info {
+	line-height: 30px;
+	margin: 0 auto 20px;
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	font-size: 120%;
+}
+.info .score, .info .speed {
+	display: inline-block;
+	padding: 5px 10px;
+	background: #fff;
+	border-radius: 4px;
+	color: #888;
+}
+.info .score .info_icon, .info .speed .info_icon {
+	padding: 3px 10px;
+	border-radius: 4px;
+	margin-right: 5px;
+	color: #fff;
+}
+.info .score span, .info .speed span {
+	font-family: monospace;
+	font-size: 150%;
+}
+.info .score .info_icon {
+	background: var(--green);
+}
+.info .score span {
+	color: var(--green);
+}
+.info .speed .info_icon {
+	background: var(--orange);
+}
+.info .speed span {
+	color: var(--orange);
+}
+.game {
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	padding: 20px;
+	background: var(--green);
+}
+.record {
+	font-size: 150%;
+}
+footer {
+	background: #fff;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+}
+.copyrigth {
+	opacity: 0.75;
+}
+.copyrigth a {
+	color: var(--blue);
+	margin-left: 20px;
+}
+.copyrigth a:before {
+	content: "Author: ";
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 10px;
+	opacity: 0.5;
+}
+.share a {
+	display: inline-block;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	margin: 0 0 0 10px;
+	background: var(--orange);
+}
+.share::before {
+	content: "Share:";
+	font-weight: bold;
+	opacity: 0.5;
+}
+.field {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	background: var(--green);
+}
+.cell {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border-style: inset;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(0, 0, 0, 0.1);
+}
+.cell.snake {
+	background: var(--blue);
+}
+.cell.food {
+	background: var(--red);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cell.food:before {
+	content: "🍄";
+	font-size: 0.6em;
+	z-index: 1;
+	transition: 0.2s;
+}
+
